@@ -2,5 +2,9 @@
   {
     "caption": "New sketch",
     "command": "new_sketch"
+  },
+  {
+    "caption": "Open Arduino Libraries",
+    "command": "open_arduino_libraries"
   }
 ]

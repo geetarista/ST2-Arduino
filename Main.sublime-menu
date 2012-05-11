@@ -12,6 +12,37 @@
             "id": "arduinonewsketchmenu",
             "caption": "New Sketch",
             "command": "new_sketch"
+          },
+          {
+            "id": "arduinoopen",
+            "caption": "Open",
+            "children": [
+              {
+                "id": "arduinodirectory",
+                "caption": "Arduino Directory",
+                "command": "open_arduino_directory"
+              },
+              {
+                "id": "arduinolibraries",
+                "caption": "Arduino Libraries",
+                "command": "open_arduino_libraries"
+              },
+              {
+                "id": "arduinoexamples",
+                "caption": "Arduino Examples",
+                "command": "open_arduino_examples"
+              },
+              {
+                "id": "arduinouserdirectory",
+                "caption": "User Arduino Directory",
+                "command": "open_user_arduino_directory"
+              },
+              {
+                "id": "arduinolibraries",
+                "caption": "User Arduino Libraries",
+                "command": "open_user_arduino_libraries"
+              }
+            ]
           }
         ]
       }
