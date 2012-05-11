@@ -1,0 +1,4 @@
+Arduino Sublime Text 2 Package
+==============================
+
+Easily integrate with your Arduino.

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[void loop() {
+	${1:/* code */}
+}
+]]></content>
+	<tabTrigger>loop</tabTrigger>
+	<scope>source.c++.arduino</scope>
+	<description>Arduino loop</description>
+</snippet>
