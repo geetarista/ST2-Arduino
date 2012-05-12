@@ -9,6 +9,21 @@
         "caption": "Arduino",
         "children": [
           {
+            "id": "arduinocompile",
+            "caption": "Compile Sketch",
+            "command": "compile"
+          },
+          {
+            "id": "arduinoupload",
+            "caption": "Upload Sketch",
+            "command": "upload"
+          },
+          {
+            "id": "arduinolocalhelp",
+            "caption": "Local Help for Keyword",
+            "command": "local_help"
+          },
+          {
             "id": "arduinonewsketchmenu",
             "caption": "New Sketch",
             "command": "new_sketch"
