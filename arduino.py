@@ -36,7 +36,7 @@ class UploadCommand(sublime_plugin.WindowCommand):
         self.window.run_command('set_build_system', {
           'file': 'Packages/ST2-Arduino/Arduino-Upload.sublime-build'
         })
-        self.window.run_command('build', "upload": "upload")
+        self.window.run_command('build')
 
 class NewSketchCommand(sublime_plugin.WindowCommand):
     """ Create new sketch file from template """
