@@ -19,6 +19,11 @@
             "command": "upload"
           },
           {
+            "id": "arduinomonitor",
+            "caption": "Monitor USB Port",
+            "command": "watch_serial_port"
+          },
+          {
             "id": "arduinolocalhelp",
             "caption": "Local Help for Keyword",
             "command": "local_help"

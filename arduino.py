@@ -80,6 +80,12 @@ class OpenUserArduinoLibraries(sublime_plugin.WindowCommand):
         path = os.getenv('HOME') + '/Documents/Arduino/libraries'
         subprocess.check_call(['open', '--', path])
 
+# class WatchSerialPortCommand(sublime_plugin.WindowCommand):
+#     """ Watch serial port for activity """
+#     def run(self):
+#         script = plugin_file('Support/Monitor')
+#         subprocess.call([script], shell=True)
+
 class LocalHelpCommand(sublime_plugin.TextCommand):
     """ Open Arduino help for currently selected word """
     def run(self, edit):
