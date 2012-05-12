@@ -11,13 +11,13 @@ PLUGIN_DIRECTORY = os.getcwd().replace(os.path.normpath(os.path.join(os.getcwd()
 PLUGIN_PATH = os.getcwd().replace(os.path.join(os.getcwd(), '..', '..') + os.path.sep, '').replace(os.path.sep, '/')
 RESULT_VIEW_NAME = 'monitor_result_view'
 
-packages_dir = sublime.packages_path()
-arduino_dir = '/Applications/Arduino.app/Contents/Resources/Java'
-reference_dir = '%s/reference' % arduino_dir
-keywords_file = '%s/lib/keywords.txt' % arduino_dir
-css_file = "%s/arduinoUno.css" % reference_dir
-make_path = '%s/hardware/tools/avr/bin/make' % arduino_dir
-user_dir = '${HOME}/Documents/Arduino/'
+PACKAGES_DIR = sublime.packages_path()
+ARDUINO_DIR = '/Applications/Arduino.app/Contents/Resources/Java'
+REFERENCE_DIR = '%s/reference' % ARDUINO_DIR
+KEYWORDS_FILE = '%s/lib/keywords.txt' % ARDUINO_DIR
+CSS_FILE = "%s/arduinoUno.css" % REFERENCE_DIR
+MAKE_PATH = '%s/hardware/tools/avr/bin/make' % ARDUINO_DIR
+USER_DIR = '${HOME}/Documents/Arduino/'
 
 def plugin_file(name):
     return os.path.join(PLUGIN_PATH, name)
@@ -51,21 +51,21 @@ class OpenArduinoDirectory(sublime_plugin.WindowCommand):
     """ Open Arduino's application directory """
     def run(self):
         if sys.platform == 'darwin':
-            path = arduino_dir
+            path = ARDUINO_DIR
             subprocess.check_call(['open', '--', path])
 
 class OpenArduinoLibraries(sublime_plugin.WindowCommand):
     """ Open Arduino's built-in libraries """
     def run(self):
         if sys.platform == 'darwin':
-            path = '%s/libraries' % arduino_dir
+            path = '%s/libraries' % ARDUINO_DIR
             subprocess.check_call(['open', '--', path])
 
 class OpenArduinoExamples(sublime_plugin.WindowCommand):
     """ Open Arduino's example sketches directory """
     def run(self):
         if sys.platform == 'darwin':
-            path = '%s/examples' % arduino_dir
+            path = '%s/examples' % ARDUINO_DIR
             subprocess.check_call(['open', '--', path])
 
 class OpenUserArduinoDirectory(sublime_plugin.WindowCommand):
@@ -94,14 +94,14 @@ class LocalHelpCommand(sublime_plugin.TextCommand):
         keywords = [l for l in lines if ((len(l) >= 2) or (l and l[0] != "#"))]
         for kw in keywords:
             if word == kw[0]:
-                html_file = '%s/%s.html' % (reference_dir, kw[-1])
+                html_file = '%s/%s.html' % (REFERENCE_DIR, kw[-1])
 
         if 'html_file' in locals():
             try:
                 subprocess.check_call(['open', html_file])
                 # Will add this if sublime ever gets formatted output window
                 # html = open(html_file).read()
-                # css = open(css_file).read() + """
+                # css = open(CSS_FILE).read() + """
                 #     #wikitext p:first-child,
                 #     #pageheader,
                 #     #pagenav,
