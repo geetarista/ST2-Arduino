@@ -1,1 +1,10 @@
-{}
+[
+  {
+    "caption": "New sketch",
+    "command": "new_sketch"
+  }
+  {
+    "caption": "Monitor USB Ports",
+    "command": "monitor"
+  }
+]

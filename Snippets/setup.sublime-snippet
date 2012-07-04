@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[void setup() {
+  ${1:/* code */}
+}
+]]></content>
+	<tabTrigger>setup</tabTrigger>
+	<scope>source.c++.arduino</scope>
+	<description>Arduino setup</description>
+</snippet>
