@@ -51,11 +51,19 @@
 
 VERSION = 0.1
 
-# Standard Arduino libraries it will import, e.g. LiquidCrystal:
-ARDLIBS =
+# Where do you keep the official Arduino software package?
+# /usr/local/share/arduino
+ARDUINO_DIR = /Applications/Arduino.app/Contents/Resources/Java
+HOME_LIB = $(HOME)/Documents/Arduino/libraries
 
-# Local user-specified libraries (in ~/sketchbook/libraries/):
-USERLIBS =
+# Standard Arduino libraries it will import, e.g. LiquidCrystal:
+ARDLIBS = $(shell cd $(ARDUINO_DIR)/libraries; find . -type d | sed 's/^\.\///')
+
+#$(shell find $(HOME)/Documents/Arduino/libraries -type f -name '*.cpp') \
+#    $(shell find $(ARDUINO_DIR)/libraries -type f -name '*.cpp')
+
+# Local user-specified libraries (in ~/Documents/Arduino/libraries):
+USERLIBS = $(shell cd $(HOME)/Documents/Arduino/libraries; find . -type d | sed 's/^\.\///')
 
 # Arduino model:
 # You can set this to be a string, such as uno, atmega328, diecimila and mega,
@@ -81,11 +89,6 @@ ifeq "$(UNAME)" "Windows"
 else
  TARGET = $(lastword $(shell basename $(CURDIR)))
 endif
-
-# Where do you keep the official Arduino software package?
-# /usr/local/share/arduino
-ARDUINO_DIR = /Applications/Arduino.app/Contents/Resources/Java
-HOME_LIB = $(HOME)/sketchbook/libraries
 
 # path to ATTiny files look at http://hlt.media.mit.edu/?p=1695
 #ATTINY_DIR=$(ARDUINO_DIR)/hardware/attiny45_85
@@ -200,14 +203,14 @@ SRC = \
     $(ARDUINO_CORE)/wiring_analog.c $(ARDUINO_CORE)/wiring_digital.c \
     $(ARDUINO_CORE)/wiring_pulse.c \
     $(ARDUINO_CORE)/wiring_shift.c $(ARDUINO_CORE)/WInterrupts.c \
-    $(foreach l,$(USERLIBS),$(wildcard $(HOME)/sketchbook/libraries/$l/*.c)) \
+    $(foreach l,$(USERLIBS),$(wildcard $(HOME)/Documents/Arduino/libraries/$l/*.c)) \
     $(foreach l,$(ARDLIBS),$(wildcard $(ARDUINO_DIR)/libraries/$l/*.c))
 
 # From ARDUINO_CORE we may only need HardwareSerial, WMath, WString, Print
 # and occasionally Tone, but grab everything just in case.
 CXXSRC = \
     $(wildcard $(ARDUINO_CORE)/*.cpp) \
-    $(foreach l,$(USERLIBS),$(wildcard $(HOME)/sketchbook/libraries/$l/*.cpp)) \
+    $(foreach l,$(USERLIBS),$(wildcard $(HOME)/Documents/Arduino/libraries/$l/*.cpp)) \
     $(foreach l,$(ARDLIBS),$(wildcard $(ARDUINO_DIR)/libraries/$l/*.cpp))
 
 FORMAT = ihex
@@ -226,7 +229,8 @@ OPT = s
 CDEFS = -DF_CPU=$(F_CPU)
 
 # Include directories
-CINCS = -I$(ARDUINO_CORE) -I$(ARDUINO_VARIANT) $(patsubst %,-I$(ARDUINO_DIR)/libraries/%,$(ARDLIBS)) $(patsubst %,-I$(HOME)/sketchbook/libraries/%,$(USERLIBS)) $(patsubst %,-I$(HOME_LIB)/%/,$(USERLIBS))
+CINCS = -I$(ARDUINO_CORE) -I$(ARDUINO_VARIANT) $(patsubst %,-I$(ARDUINO_DIR)/libraries/%,$(ARDLIBS)) $(patsubst %,-I$(HOME)/Documents/Arduino/libraries/%,$(USERLIBS))
+#$(patsubst %,-I$(HOME_LIB)/%/,$(USERLIBS))
 
 # Compiler flag to set the C Standard level.
 # c89   - "ANSI" C
