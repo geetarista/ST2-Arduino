@@ -96,7 +96,7 @@ class LocalHelpCommand(sublime_plugin.TextCommand):
         else:
             word = ""
 
-        lines = [line.split() for line in open(keywords_file)]
+        lines = [line.split() for line in open(KEYWORDS_FILE)]
         keywords = [l for l in lines if ((len(l) >= 2) or (l and l[0] != "#"))]
         for kw in keywords:
             if word == kw[0]:
