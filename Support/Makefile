@@ -70,7 +70,7 @@ USERLIBS = $(shell cd $(HOME)/Documents/Arduino/libraries; find . -type d | sed 
 #MODEL ?= uno
 # Or you can set it to a conditional like this one: this will use an Uno
 # if /dev/ttyACM0 is present, otherwise revert to atmega328.
-MODEL ?= $(shell if test -e /dev/tty.usb*; then echo uno; else echo atmega328; fi)
+MODEL ?= $(shell if test -e /dev/tty.usbmodem*; then echo uno; else echo atmega328; fi)
 
 ############################################################################
 # Platform's settings
