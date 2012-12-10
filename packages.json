@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.2",
+  "package_name_map": {
+    "ST2-Arduino": "Arduino"
+  },
+  "packages": [
+    {
+      "name": "Arduino",
+      "description": "",
+      "author": "Robby Colvin (geetarista)",
+      "homepage": "https://github.com/geetarista/ST2-Arduino",
+      "last_modified": "2012-12-09 12:00:00",
+      "platforms": {
+        "osx": [
+          {
+            "version": "0.2.0",
+            "url": "http://nodeload.github.com/geetarista/ST2-Arduino/zipball/master"
+          }
+        ]
+      }
+    }
+  ]
+}
