@@ -14,7 +14,7 @@
         "osx": [
           {
             "version": "0.2.0",
-            "url": "http://nodeload.github.com/geetarista/ST2-Arduino/zipball/master"
+            "url": "https://github.com/geetarista/ST2-Arduino/archive/master.zip"
           }
         ]
       }
