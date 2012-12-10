@@ -1,0 +1,5 @@
+[
+    { "keys": ["super+ctrl+shift+b"], "command": "compile" },
+    { "keys": ["super+ctrl+shift+u"], "command": "upload"},
+    { "keys": ["super+ctrl+shift+c"], "command": "clean"}
+]
