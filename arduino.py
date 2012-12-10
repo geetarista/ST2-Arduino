@@ -16,7 +16,6 @@ ARDUINO_DIR = '/Applications/Arduino.app/Contents/Resources/Java'
 REFERENCE_DIR = '%s/reference' % ARDUINO_DIR
 KEYWORDS_FILE = '%s/lib/keywords.txt' % ARDUINO_DIR
 CSS_FILE = "%s/arduinoUno.css" % REFERENCE_DIR
-MAKE_PATH = '%s/hardware/tools/avr/bin/make' % ARDUINO_DIR
 USER_DIR = '${HOME}/Documents/Arduino/'
 
 def plugin_file(name):
@@ -35,6 +34,14 @@ class UploadCommand(sublime_plugin.WindowCommand):
     def run(self):
         self.window.run_command('set_build_system', {
           'file': 'Packages/ST2-Arduino/Arduino-Upload.sublime-build'
+        })
+        self.window.run_command('build')
+
+class CleanCommand(sublime_plugin.WindowCommand):
+    """ Clean the current file """
+    def run(self):
+        self.window.run_command('set_build_system', {
+          'file': 'Packages/ST2-Arduino/Arduino-Clean.sublime-build'
         })
         self.window.run_command('build')
 

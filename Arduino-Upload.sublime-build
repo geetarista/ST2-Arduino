@@ -1,6 +1,4 @@
 {
-    "cmd": ["make", "upload", "-e", "-f", "$packages/ST2-Arduino/Support/Makefile"],
-    "file_regex": "file:\\s(.+)\\]",
-    "line_regex": "(\\d+),(\\d+)",
+    "cmd": ["/usr/local/bin/ino", "upload"],
     "selector": "source.c++.arduino"
 }

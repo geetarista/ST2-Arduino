@@ -19,6 +19,11 @@
             "command": "upload"
           },
           {
+            "id": "arduinoclean",
+            "caption": "Clean Sketch",
+            "command": "clean"
+          },
+          {
             "id": "arduinomonitor",
             "caption": "Monitor USB Port",
             "command": "watch_serial_port"

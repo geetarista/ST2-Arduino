@@ -14,5 +14,9 @@
   {
     "caption": "Upload Arduino sketch",
     "command": "upload"
+  },
+  {
+    "caption": "Clean Arduino sketch",
+    "command": "clean"
   }
 ]

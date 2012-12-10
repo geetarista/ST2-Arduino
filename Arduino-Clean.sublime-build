@@ -1,0 +1,5 @@
+{
+  "cmd": ["/usr/local/bin/ino", "clean"],
+  "selector": "source.c++.arduino",
+  "working_dir": "$file_path/.."
+}

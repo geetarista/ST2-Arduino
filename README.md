@@ -6,6 +6,12 @@ Sublime Text 2 plugin for Arduino.
 
 Currently, this plugin is only tested and optimized (read works) for OS X. I don't have access to Windows or Linux, so feel free to fork and add that functionality.
 
+## Prerequisites
+
+Dealing with a Makefile on my own was proving too cumbersome, so I've now opted to use the `ino` tool instead.
+
+Please visit [Ino's website](http://inotool.org/) to learn how to install it before continuing.
+
 ## Installation
 
 Via [Package Control](http://wbond.net/sublime_packages/package_control) (recommended):
