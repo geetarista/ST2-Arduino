@@ -1,4 +1,5 @@
 {
-  "cmd": ["/usr/local/bin/ino", "build"],
-  "selector": "source.c++.arduino"
+  "cmd": ["/usr/local/share/python/ino", "build"],
+  "selector": "source.c++.arduino",
+  "working_dir": "$file_path/.."
 }

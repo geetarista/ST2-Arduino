@@ -1,4 +1,5 @@
 {
-    "cmd": ["/usr/local/bin/ino", "upload"],
-    "selector": "source.c++.arduino"
+  "cmd": ["/usr/local/share/python/ino", "upload"],
+  "selector": "source.c++.arduino",
+  "working_dir": "$file_path/.."
 }
