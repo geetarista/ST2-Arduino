@@ -25,7 +25,7 @@ class CompileCommand(sublime_plugin.WindowCommand):
     """ Compile the current file """
     def run(self):
         self.window.run_command('set_build_system', {
-          'file': 'Packages/ST2-Arduino/Arduino-Compile.sublime-build'
+          'file': "%s/Arduino-Compile.sublime-build" % PLUGIN_PATH
         })
         self.window.run_command('build')
 
@@ -33,7 +33,7 @@ class UploadCommand(sublime_plugin.WindowCommand):
     """ Upload the current sketch to the board """
     def run(self):
         self.window.run_command('set_build_system', {
-          'file': 'Packages/ST2-Arduino/Arduino-Upload.sublime-build'
+          'file': "%s/Arduino-Upload.sublime-build" % PLUGIN_PATH
         })
         self.window.run_command('build')
 
@@ -41,7 +41,7 @@ class CleanCommand(sublime_plugin.WindowCommand):
     """ Clean the current file """
     def run(self):
         self.window.run_command('set_build_system', {
-          'file': 'Packages/ST2-Arduino/Arduino-Clean.sublime-build'
+          'file': "%s/Arduino-Clean.sublime-build" % PLUGIN_PATH
         })
         self.window.run_command('build')
 
