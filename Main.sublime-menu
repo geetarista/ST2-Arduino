@@ -23,11 +23,11 @@
             "caption": "Clean Sketch",
             "command": "clean"
           },
-          {
-            "id": "arduinomonitor",
-            "caption": "Monitor USB Port",
-            "command": "watch_serial_port"
-          },
+          // {
+          //   "id": "arduinomonitor",
+          //   "caption": "Monitor USB Port",
+          //   "command": "watch_serial_port"
+          // },
           {
             "id": "arduinolocalhelp",
             "caption": "Local Help for Keyword",

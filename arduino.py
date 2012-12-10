@@ -54,34 +54,34 @@ class NewSketchCommand(sublime_plugin.WindowCommand):
         file.insert(edit, 0, template)
         file.end_edit(edit)
 
-class OpenArduinoDirectory(sublime_plugin.WindowCommand):
+class OpenArduinoDirectoryCommand(sublime_plugin.WindowCommand):
     """ Open Arduino's application directory """
     def run(self):
         if sys.platform == 'darwin':
             path = ARDUINO_DIR
             subprocess.check_call(['open', '--', path])
 
-class OpenArduinoLibraries(sublime_plugin.WindowCommand):
+class OpenArduinoLibrariesCommand(sublime_plugin.WindowCommand):
     """ Open Arduino's built-in libraries """
     def run(self):
         if sys.platform == 'darwin':
             path = '%s/libraries' % ARDUINO_DIR
             subprocess.check_call(['open', '--', path])
 
-class OpenArduinoExamples(sublime_plugin.WindowCommand):
+class OpenArduinoExamplesCommand(sublime_plugin.WindowCommand):
     """ Open Arduino's example sketches directory """
     def run(self):
         if sys.platform == 'darwin':
             path = '%s/examples' % ARDUINO_DIR
             subprocess.check_call(['open', '--', path])
 
-class OpenUserArduinoDirectory(sublime_plugin.WindowCommand):
+class OpenUserArduinoDirectoryCommand(sublime_plugin.WindowCommand):
     """ Open user's arduino directory """
     def run(self):
         path = os.getenv('HOME') + '/Documents/Arduino'
         subprocess.check_call(['open', '--', path])
 
-class OpenUserArduinoLibraries(sublime_plugin.WindowCommand):
+class OpenUserArduinoLibrariesCommand(sublime_plugin.WindowCommand):
     """ Open user's library files """
     def run(self):
         path = os.getenv('HOME') + '/Documents/Arduino/libraries'
