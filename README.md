@@ -2,8 +2,6 @@
 
 Sublime Text 2 plugin for Arduino.
 
-Currently in progress--check back later.
-
 ## Notes
 
 Currently, this plugin is only tested and optimized (read works) for OS X. I don't have access to Windows or Linux, so feel free to fork and add that functionality.
