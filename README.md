@@ -10,7 +10,16 @@ Currently, this plugin is only tested and optimized (read works) for OS X. I don
 
 Dealing with a Makefile on my own was proving too cumbersome, so I've now opted to use the `ino` tool instead.
 
-Please visit [Ino's website](http://inotool.org/) to learn how to install it before continuing.
+The best way to install ino is to build from source:
+
+```bash
+git clone git://github.com/amperka/ino.git && cd ino
+make install
+```
+
+However you install ino, make sure that its location is available in your $PATH so this plugin can find it.
+
+Please visit [ino's website](http://inotool.org/) for more information.
 
 ## Installation
 
