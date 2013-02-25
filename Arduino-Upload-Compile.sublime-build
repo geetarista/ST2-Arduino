@@ -1,10 +1,10 @@
 {
-  "cmd": ["ino", "build", ";", "ino", "upload"],
+  "cmd": ["sh" "-c", "ino build && ino upload"],
   "windows": {
-    "cmd": ["ino", "build", "&", "ino", "upload"]
+    "shell": true,
+    "cmd": ["ino", "build", "&;", "ino", "upload"]
   },
   "selector": "source.c++.arduino",
   "working_dir": "$file_path/..",
   "path": "/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin",
-  "shell": true
 }
