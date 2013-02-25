@@ -16,6 +16,10 @@
     "command": "upload"
   },
   {
+    "caption": "Compile and Upload Arduino sketch",
+    "command": "compile_upload"
+  },
+  {
     "caption": "Clean Arduino sketch",
     "command": "clean"
   }

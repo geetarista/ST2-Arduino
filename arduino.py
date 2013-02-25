@@ -37,6 +37,14 @@ class UploadCommand(sublime_plugin.WindowCommand):
         })
         self.window.run_command('build')
 
+class CompileUploadCommand(sublime_plugin.WindowCommand):
+    """ Upload and compile the current sketch to the board """
+    def run(self):
+        self.window.run_command('set_build_system', {
+          'file': "%s/Arduino-Compile-Upload.sublime-build" % PLUGIN_PATH
+        })
+        self.window.run_command('build')
+
 class CleanCommand(sublime_plugin.WindowCommand):
     """ Clean the current file """
     def run(self):
